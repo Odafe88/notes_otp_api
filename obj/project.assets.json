@@ -3457,11 +3457,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\alaiy\\Documents\\GitHub\\notes_api\\notes_api_app\\notes_api_app.csproj",
+      "projectUniqueName": "C:\\Users\\alaiy\\Documents\\GitHub\\notes_otp_api\\notes_api_app.csproj",
       "projectName": "notes_api_app",
-      "projectPath": "C:\\Users\\alaiy\\Documents\\GitHub\\notes_api\\notes_api_app\\notes_api_app.csproj",
+      "projectPath": "C:\\Users\\alaiy\\Documents\\GitHub\\notes_otp_api\\notes_api_app.csproj",
       "packagesPath": "C:\\Users\\alaiy\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\alaiy\\Documents\\GitHub\\notes_api\\notes_api_app\\obj\\",
+      "outputPath": "C:\\Users\\alaiy\\Documents\\GitHub\\notes_otp_api\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\alaiy\\AppData\\Roaming\\NuGet\\NuGet.Config"

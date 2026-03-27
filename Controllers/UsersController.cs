@@ -188,6 +188,8 @@ namespace notes_api_app.Controllers
             return Ok(new { token, message = "Successfully authenticated!" });
         }
 
+        
+        
         // PUT: api/users/{id}
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateUser(int id, UpdateUserDto dto)
@@ -236,6 +238,35 @@ namespace notes_api_app.Controllers
 
             return number.ToString();
         }
+
+        // POST: api/users/resend-otp
+        [HttpPost("resend-otp")]
+        public async Task<ActionResult> ResendOtp(ResendOtpDto dto)
+        {
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == dto.Email);
+            if (user == null)
+            {
+                return NotFound(new { message = "User not found" });
+            }
+
+            // Block resend if a valid OTP was sent less than 1 minute ago
+            if (user.OtpExpiry.HasValue && user.OtpExpiry > DateTime.UtcNow.AddMinutes(9))
+            {
+                return BadRequest(new { message = "Please wait before requesting a new code" });
+            }
+
+            // Generate and save new OTP
+            var otpCode = GenerateOtp();
+            user.OtpCode = otpCode;
+            user.OtpExpiry = DateTime.UtcNow.AddMinutes(10);
+            await _context.SaveChangesAsync();
+
+            // Send OTP email
+            await _emailService.SendOtpEmailAsync(user.Email, otpCode);
+
+            return Ok(new { message = "A new OTP has been sent to your email." });
+        }
+
         // Helper method: Generate JWT token
         private string GenerateJwtToken(User user)
         { 
@@ -267,5 +298,10 @@ namespace notes_api_app.Controllers
 
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
+    }
+
+    public class ResendOtpDto
+    {
+        public string? Email { get; internal set; }
     }
 }

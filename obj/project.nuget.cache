@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "sFtKBmJABWo=",
+  "dgSpecHash": "ABINr63tM+M=",
   "success": true,
-  "projectFilePath": "C:\\Users\\alaiy\\Documents\\GitHub\\notes_api\\notes_api_app\\notes_api_app.csproj",
+  "projectFilePath": "C:\\Users\\alaiy\\Documents\\GitHub\\notes_otp_api\\notes_api_app.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\alaiy\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\alaiy\\.nuget\\packages\\bouncycastle.cryptography\\2.4.0\\bouncycastle.cryptography.2.4.0.nupkg.sha512",
@@ -61,9 +61,9 @@
       "code": "NU1902",
       "level": "Warning",
       "message": "Package 'MimeKit' 4.8.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-g7hc-96xr-gvvx",
-      "projectPath": "C:\\Users\\alaiy\\Documents\\GitHub\\notes_api\\notes_api_app\\notes_api_app.csproj",
+      "projectPath": "C:\\Users\\alaiy\\Documents\\GitHub\\notes_otp_api\\notes_api_app.csproj",
       "warningLevel": 1,
-      "filePath": "C:\\Users\\alaiy\\Documents\\GitHub\\notes_api\\notes_api_app\\notes_api_app.csproj",
+      "filePath": "C:\\Users\\alaiy\\Documents\\GitHub\\notes_otp_api\\notes_api_app.csproj",
       "libraryId": "MimeKit",
       "targetGraphs": [
         "net10.0"
